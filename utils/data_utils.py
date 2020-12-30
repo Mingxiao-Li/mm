@@ -7,6 +7,7 @@ import pickle
 
 def write_tsv_to_lmdb(source_path,output_path,field_name, max_size = 1099511627776,):
     """
+    Handle pretrained image feature (bottom-up attention)
     :param source_path: list of source file path
     :param output_path: output file name
     :param max_size:
