@@ -28,7 +28,7 @@ def write_tsv_to_lmdb(source_path,output_path,field_name, max_size = 10995116277
                     data[field] = np.frombuffer(base64.b64decode(item[field]),
                                                 dtype=np.float32).reshape((item['num_boxes'], -1))
                 info = pickle.dump(data)
-                txn.put(key=str(item["image_id"]),value=info)
+                txn.put(key=str(item["image_id"]).encode(),value=info)
     txn.commit()
     env.close()
 
